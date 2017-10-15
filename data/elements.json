@@ -1,0 +1,29 @@
+{
+ "windows" : 
+	{
+		"width" : 500,
+		"height" : 500,
+		"framerateLimit" : 60,
+		"speed" : 5
+	},
+ "circleShape":	
+	{
+		"radius" : 60,
+		"color" : 
+			{
+				"red":0, 
+				"green" : 255,
+				"blue": 0
+			}
+	},
+ "squareShape":	
+	{
+		"width" : 100,
+		"color" : 
+			{
+				"red": 0, 
+				"green" : 0,
+				"blue": 255
+			}
+	}
+}
