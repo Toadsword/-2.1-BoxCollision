@@ -62,19 +62,23 @@ int main()
 		//Manage inputs
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			delta_move_circle.x -= 1.0f;
+			if(!(circle.getPosition().x - 1.0f < 0))
+				delta_move_circle.x -= 1.0f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			delta_move_circle.x += 1.0f;
+			if (!(circle.getPosition().x + circle.getRadius() * 2 + 1.0f > data["windows"]["width"]))
+				delta_move_circle.x += 1.0f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			delta_move_circle.y -= 1.0f;
+			if (!(circle.getPosition().y - 1.0f < 0))
+				delta_move_circle.y -= 1.0f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
-			delta_move_circle.y += 1.0f;
+			if (!(circle.getPosition().y + circle.getRadius() * 2 + 1.0f > data["windows"]["height"]))
+				delta_move_circle.y += 1.0f;
 		}
 
 		circle.setPosition(circle.getPosition() + speed * delta_move_circle);
