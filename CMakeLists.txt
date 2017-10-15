@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.9)
-project(SFMLTest)
+project(BoxCollision)
 
-file(GLOB_RECURSE SFMLTest_SRC src/*.cpp include/*.h include/*.hpp)
+file(GLOB_RECURSE BoxCollision_SRC src/*.cpp include/*.h include/*.hpp)
 
 include_directories(include/)
-add_executable(SFMLTest ${SFMLTest_SRC})
+add_executable(BoxCollision ${BoxCollision_SRC})
 set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/externals)
 
 
@@ -15,12 +15,12 @@ set(SFML_BUILD_EXAMPLES FALSE)
 add_subdirectory(${SFML_DIR})
 include_directories(${SFML_DIR}/include)
 
-LIST(APPEND SFMLTest_LIBRARIES
+LIST(APPEND BoxCollision_LIBRARIES
 	sfml-system
 	sfml-window
 	sfml-graphics
 	sfml-audio
 	sfml-network)
 	
-target_link_libraries(SFMLTest ${SFMLTest_LIBRARIES})
+target_link_libraries(BoxCollision ${BoxCollision_LIBRARIES})
 	
